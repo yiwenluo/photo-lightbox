@@ -15,7 +15,8 @@ var Lightbox = (function () {
         _lightboxWrapper = document.querySelector(".lightbox-wrapper");
         _lightbox = _lightboxWrapper.querySelector(".lightbox");
         _lightboxImage = _lightboxWrapper.querySelector("img");
-        _lightboxCaption = _lightboxWrapper.querySelector(".caption");
+        _lightboxCaption = _lightboxWrapper.querySelector(".caption .text");
+        _lightboxUsername = _lightboxWrapper.querySelector(".caption .username");
 
         _lightboxWrapper.onclick = function (ev) {
             hide();
@@ -57,20 +58,38 @@ var Lightbox = (function () {
     function refresh(image) {
         _lightboxImage.src = image.url;
         _lightboxCaption.innerText = image.caption;
+        _lightboxUsername.innerText = !!image.username ? image.username + ": ": ""; 
+
+        // reached the beginning of all images, disable prev button
+        if (_pointer - 1 < 0) {
+            _prevPageButton.classList.add("disabled");
+        } else {
+            _prevPageButton.classList.remove("disabled")
+        }
+
+        // reached the end of all images, disable next button
+        if (_pointer + 1 >= _images.length) {
+            _nextPageButton.classList.add("disabled");
+        } else {
+            _nextPageButton.classList.remove("disabled")
+        }
     }
 
     function prev() {
-        _pointer -= 1;
-        if (_pointer >= 0) {
+        if (_pointer - 1 >= 0) {
+            _pointer -= 1;
             refresh(_images[_pointer]);
         }
+        
+
     }
 
     function next() {
-        _pointer += 1;
-        if (_pointer < _images.length) {
+        if (_pointer + 1 < _images.length) {
+            _pointer += 1;
             refresh(_images[_pointer]);
         }
+        
     }
 
 

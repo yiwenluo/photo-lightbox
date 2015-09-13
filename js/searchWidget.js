@@ -11,11 +11,36 @@ var SearchWidget = (function () {
         _searchInput = _searchWidget.querySelector("input");
         _searchButton = _searchWidget.querySelector("button");
         _callback = onSearchClickedCallback;
+
+        _searchWidget.onkeydown = onKeyDown;
         _searchButton.onclick = onSearchSubmit;
+
+        document.onkeydown = captureInput;
     }
 
     function clear() {
         _searchInput.value = "";
+    }
+
+    function captureInput(ev) {
+        if (!_searchInput.value) {
+            _searchInput.value = "#";
+            _searchInput.focus();
+        }
+    }
+
+    function onKeyDown(ev) {
+        switch (ev.keyCode) {
+            case 13: // enter
+                onSearchSubmit();
+                break;
+            default:
+                if (!_searchInput.value) {
+                    _searchInput.value = "#";
+                }
+                break;
+        }
+        ev.stopImmediatePropagation();
     }
 
     function onSearchSubmit() {

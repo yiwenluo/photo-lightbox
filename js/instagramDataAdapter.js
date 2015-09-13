@@ -1,12 +1,13 @@
 var InstagramDataAdapter = (function () {
     
 
-    function createSimpleObj(images, caption) {
+    function createSimpleObj(images, caption, user) {
         var image = images && images.standard_resolution;
         if (!image) {
             return null;
         }
-        image.caption = (caption && caption.text) || "No caption";
+        image.caption = (caption && caption.text);
+        image.username = (user && user.username);
         return image;
     } 
 
@@ -17,7 +18,7 @@ var InstagramDataAdapter = (function () {
         }
 
         dataArray.forEach(function (item, idx) {
-            var obj = createSimpleObj(item.images, item.caption);
+            var obj = createSimpleObj(item.images, item.caption, item.user);
             if (obj) {
                 images.push(obj);
             }

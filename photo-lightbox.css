@@ -61,7 +61,7 @@ html, body {
     top: 0px;
     bottom: 0px;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
 }
 
@@ -98,8 +98,8 @@ html, body {
 .lightbox img {
     display: inline-block;
     align-self: center;
-    max-width: 85%;
-    max-height: 85%;
+    max-width: 100%;
+    max-height: 100%;
     order: 2;
 }
 
@@ -107,16 +107,24 @@ html, body {
     color: white;
     text-align: left;
     padding: 0 5px;
-    font-size: 10pt;
-    line-height: 1rem;
+    font-size: 12pt;
+    line-height: 1.7rem;
     overflow: hidden;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    /* background-color: rgba(0, 0, 0, 0.85); */
     position: fixed;
     bottom: 0px;
     text-overflow: ellipsis;
-    height: 2rem;
+    height: 1.8rem;
     white-space: nowrap;
+    /* text-align: center; */
+    margin: 5px 10px;
+    width: 80%;
+}
+
+.caption .username {
+    font-weight: 600;
+    color: lightblue;
 }
 
 .prev-page {
@@ -137,7 +145,10 @@ html, body {
     top: 0;
     right: 0;
     background: url('./img/right_arrow.png') no-repeat center;
+}
 
+.disabled {
+    background: none;
 }
 
 
