@@ -54,50 +54,69 @@ html, body {
 
 
 .lightbox-wrapper {
-    display: none;
     position: fixed;
-    /*display: block;*/
     width: 100%;
     min-width: 320px;
     height: 100%;
     top: 0px;
     bottom: 0px;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.8);
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
 }
 
-/* pseudo element that helps vertical align the lightbox */
-.lightbox-wrapper:before {
-    content: ' ';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
 
 .lightbox {
-    display: inline-block;
-    vertical-align: middle;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 60%;
-    border: 2px solid white;
     border-radius: 4px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.lightbox:before {
+    content: ' ';
+    flex-shrink: 0;
+    width: 100%;
+    order: 1;
+    display: block;
+    flex-basis: 20px;
+}
+
+.lightbox:after {
+    content: ' ';
+    flex-shrink: 0;
+    width: 100%;
+    align-self: center;
+    flex-basis: 20px;
+    order: 3;
 }
 
 .lightbox img {
-    width: 100%;
     display: inline-block;
+    align-self: center;
+    max-width: 85%;
+    max-height: 85%;
+    order: 2;
 }
 
-.img-title {
-    color: black;
+.caption {
+    color: white;
     text-align: left;
     padding: 0 5px;
     font-size: 10pt;
     line-height: 1rem;
-    max-height: 3rem;
     overflow: hidden;
-    word-wrap: break-word;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: 0px;
+    text-overflow: ellipsis;
+    height: 2rem;
+    white-space: nowrap;
 }
 
 .prev-page {

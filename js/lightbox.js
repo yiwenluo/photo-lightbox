@@ -3,7 +3,7 @@ var Lightbox = (function () {
     var _lightboxWrapper;
     var _lightbox;
     var _lightboxImage;
-    var _lightboxTitle;
+    var _lightboxCaption;
 
     var _nextPageButton;
     var _prevPageButton;
@@ -15,7 +15,7 @@ var Lightbox = (function () {
         _lightboxWrapper = document.querySelector(".lightbox-wrapper");
         _lightbox = _lightboxWrapper.querySelector(".lightbox");
         _lightboxImage = _lightboxWrapper.querySelector("img");
-        _lightboxTitle = _lightboxWrapper.querySelector(".img-title");
+        _lightboxCaption = _lightboxWrapper.querySelector(".caption");
 
         _lightboxWrapper.onclick = function (ev) {
             hide();
@@ -56,7 +56,7 @@ var Lightbox = (function () {
 
     function refresh(image) {
         _lightboxImage.src = image.url;
-        _lightboxTitle.innerText = image.caption;
+        _lightboxCaption.innerText = image.caption;
     }
 
     function prev() {
