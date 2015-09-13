@@ -7,6 +7,7 @@ var Lightbox = (function () {
 
     var _nextPageButton;
     var _prevPageButton;
+    var _closeButton;
 
     var _images = [];
     var _pointer = -1;
@@ -38,6 +39,9 @@ var Lightbox = (function () {
             ev.stopImmediatePropagation();
             next();
         }
+
+        _closeButton = _lightboxWrapper.querySelector(".close");
+        _closeButton.onclick = hide;
     }
 
     // update local cache 
