@@ -52,6 +52,10 @@ html, body {
     outline: none;
 }
 
+[placeholder] {
+    text-overflow: ellipsis;
+}
+
 .error {
     color: #EF8080;
 }

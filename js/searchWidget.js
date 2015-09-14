@@ -70,7 +70,7 @@ var SearchWidget = (function () {
     }
 
     function showError(message) {
-        _errorMessage.innerText = message;
+        _errorMessage.textContent = message;
         _errorMessage.style.display = "block";
         _errorMessage.classList.remove("fade-out-anime");
         _errorMessage.classList.add("fade-out-anime");

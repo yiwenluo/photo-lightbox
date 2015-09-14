@@ -61,8 +61,8 @@ var Lightbox = (function () {
 
     function refresh(image) {
         _lightboxImage.src = image.url;
-        _lightboxCaption.innerText = image.caption;
-        _lightboxUsername.innerText = !!image.username ? image.username + ": ": ""; 
+        _lightboxCaption.textContent = image.caption;
+        _lightboxUsername.textContent = !!image.username ? image.username + ": ": ""; 
 
         // reached the beginning of all images, disable prev button
         if (_pointer - 1 < 0) {
@@ -84,8 +84,6 @@ var Lightbox = (function () {
             _pointer -= 1;
             refresh(_images[_pointer]);
         }
-        
-
     }
 
     function next() {
