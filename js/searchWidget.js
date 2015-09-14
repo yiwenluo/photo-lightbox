@@ -30,12 +30,8 @@ var SearchWidget = (function () {
 
         captureInitialKeyboardInput();
 
-        _errorMessage.addEventListener("animationend", function () {
-            // remove animation class so that it doesn't play multiple times
-            // NOTE: somehow animation-iteration-count doesn't work for me. Need more investigation
-            _errorMessage.classList.remove("fade-out-anime");
-            _errorMessage.style.display = "none";
-        });
+        _errorMessage.addEventListener("webkitAnimationEnd", hideError);
+        _errorMessage.addEventListener("animationend", hideError);
     }
 
     /** 
@@ -115,6 +111,16 @@ var SearchWidget = (function () {
         _errorMessage.style.display = "block";
         _errorMessage.classList.remove("fade-out-anime");
         _errorMessage.classList.add("fade-out-anime");
+    }
+
+    /**
+     * Hide Error Message
+     */
+    function hideError() {
+        // remove animation class so that it doesn't play multiple times
+        // NOTE: somehow animation-iteration-count doesn't work for me. Need more investigation
+        _errorMessage.classList.remove("fade-out-anime");
+        _errorMessage.style.display = "none";
     }
 
     return {

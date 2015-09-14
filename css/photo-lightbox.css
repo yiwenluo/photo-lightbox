@@ -60,7 +60,19 @@ html, body {
 }
 
 .fade-out-anime {
+    -webkit-animation-name: fade-out;
+    -webkit-animation-duration: 3s;
     animation: fade-out 3s;
+}
+
+
+@-webkit-keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes fade-out {
@@ -71,6 +83,7 @@ html, body {
         opacity: 0;
     }
 }
+
 
 
 .lightbox-wrapper {
