@@ -87,12 +87,16 @@ html, body {
 
 
 .lightbox {
+    display: -webkit-flex;
     display: flex;
     width: 60%;
     height: 100%;
     margin: 0 auto;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     border-radius: 4px;
 }
@@ -100,18 +104,25 @@ html, body {
 .lightbox:before {
     content: ' ';
     width: 100%;
-    order: 1;
     display: block;
+    -webkit-flex-basis: 1.25rem;
     flex-basis: 1.25rem;
+    -webkit-flex-shrink: 0;
     flex-shrink: 0;
+    -webkit-order: 1;
+    order: 1;
 }
 
 .lightbox:after {
     content: ' ';
     width: 100%;
+    -webkit-align-self: center;
     align-self: center;
+    -webkit-flex-basis: 1.25rem;
     flex-basis: 1.25rem;
+    -webkit-flex-shrink: 0;
     flex-shrink: 0;
+    -webkit-order: 3;
     order: 3;
 }
 
@@ -119,7 +130,9 @@ html, body {
     display: inline-block;
     max-width: 100%;
     max-height: 100%;
+    -webkit-align-self: center;
     align-self: center;
+    -webkit-order: 2;
     order: 2;
 }
 

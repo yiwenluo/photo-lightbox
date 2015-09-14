@@ -88,7 +88,7 @@ var Lightbox = (function () {
      */
     function refresh(image) {
         _lightboxImage.src = image.url;
-        _lightboxCaption.innerText = image.caption;
+        _lightboxCaption.textContent = image.caption;
         _lightboxUsername.textContent = !!image.username ? image.username + ": ": ""; 
 
         // reached the beginning of all images, disable prev button
