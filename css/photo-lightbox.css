@@ -1,7 +1,7 @@
 html, body {
    height:100%;
    width: 100%;
-   min-width: 320px;
+   min-width: 25rem;
    padding: 0;
    margin: 0;
    border: 0;
@@ -9,7 +9,7 @@ html, body {
 }
 
 .content {
-    min-width: 320px;
+    min-width: 25rem;
     width: 100%;
     height: 100%;
 }
@@ -17,9 +17,8 @@ html, body {
 .search-widget {
     position: relative;
     top: 40%;
-    /*display: none;*/
     max-width: 80%;
-    min-width: 320px;
+    min-width: 25rem;
     padding: 15px;
     margin: auto;
     text-align: center;
@@ -41,9 +40,9 @@ html, body {
 
 .search-widget input {
     position: relative;
+    display: block;
     width: 100%;
     height: 2.5rem;
-    display: block;
     margin: auto;
     border: none; 
     font-size: 16pt;
@@ -75,106 +74,101 @@ html, body {
 
 
 .lightbox-wrapper {
+    display: none;
     position: fixed;
     width: 100%;
-    min-width: 320px;
+    min-width: 25rem;
     height: 100%;
-    top: 0px;
-    bottom: 0px;
-    z-index: 100;
+    top: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    z-index: 100;
 }
 
 
 .lightbox {
     display: flex;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
     border-radius: 4px;
-    height: 100%;
-    margin: 0 auto;
 }
 
 .lightbox:before {
     content: ' ';
-    flex-shrink: 0;
     width: 100%;
     order: 1;
     display: block;
-    flex-basis: 20px;
+    flex-basis: 1.25rem;
+    flex-shrink: 0;
 }
 
 .lightbox:after {
     content: ' ';
-    flex-shrink: 0;
     width: 100%;
     align-self: center;
-    flex-basis: 20px;
+    flex-basis: 1.25rem;
+    flex-shrink: 0;
     order: 3;
 }
 
 .lightbox img {
     display: inline-block;
-    align-self: center;
     max-width: 100%;
     max-height: 100%;
+    align-self: center;
     order: 2;
 }
 
 .caption {
+    position: absolute;
+    width: 80%;
+    height: 1.8rem;
+    bottom: 0;
+    padding: 0 0.35rem;
+    margin: 0.35rem 1.6rem;
     color: white;
     text-align: left;
-    padding: 0 5px;
     font-size: 12pt;
     line-height: 1.7rem;
     overflow: hidden;
-    width: 100%;
-    /* background-color: rgba(0, 0, 0, 0.85); */
-    position: fixed;
-    bottom: 0px;
-    text-overflow: ellipsis;
-    height: 1.8rem;
-    white-space: nowrap;
-    /* text-align: center; */
-    margin: 5px 10px;
-    width: 80%;
 }
 
 .caption .username {
-    font-weight: 600;
     color: #6CCDEC;
+    font-weight: 600;
 }
 
 .prev-page {
     position: fixed;
-    z-index: 200;
-    width: 50px;
+    width: 3.5rem;
     height: 100%;
     top: 0;
     left: 0;
-    background: url('./img/left_arrow.png') no-repeat center;
+    background: url('../img/left_arrow.png') no-repeat center;
+    z-index: 200;
 }
 
 .next-page {
     position: fixed;
-    z-index: 200;
-    width: 50px;
+    width: 3.5rem;
     height: 100%;
     top: 0;
     right: 0;
-    background: url('./img/right_arrow.png') no-repeat center;
+    background: url('../img/right_arrow.png') no-repeat center;
+    z-index: 200;
 }
 
 .close {
     position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 40px;
-    height: 40px;
-    background: url('./img/close.png') no-repeat center;
+    width: 2.25rem;
+    height: 2.25rem;
+    top: 0;
+    right: 0;
+    background: url('../img/close.png') no-repeat center;
     z-index: 200;
 }
 
