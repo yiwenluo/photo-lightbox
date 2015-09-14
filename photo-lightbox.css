@@ -27,13 +27,13 @@ html, body {
 }
 
 .search-widget button {
-    display: block;  
+    display: block;
     height: 2.5rem;
     padding: 0.3rem 1rem;
-    margin: 10px auto;  
-    border: 2px solid lightblue;
+    margin: 10px auto;
+    border: 2px solid #6CCDEC;
     border-radius: 4px;
-    color: lightblue;
+    color: #6CCDEC;
     font-size: 12pt;
     line-height: 1rem;
     background: transparent;
@@ -47,9 +47,26 @@ html, body {
     margin: auto;
     border: none; 
     font-size: 16pt;
-    color: lightblue;
+    color: #6CCDEC;
     text-align: center;
     outline: none;
+}
+
+.error {
+    color: #EF8080;
+}
+
+.fade-out-anime {
+    animation: fade-out 3s;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
@@ -124,7 +141,7 @@ html, body {
 
 .caption .username {
     font-weight: 600;
-    color: lightblue;
+    color: #6CCDEC;
 }
 
 .prev-page {

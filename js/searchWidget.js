@@ -3,6 +3,7 @@ var SearchWidget = (function () {
     var _searchWidget;
     var _searchInput;
     var _searchButton;
+    var _errorMessage;
 
     var _callback;
 
@@ -10,12 +11,20 @@ var SearchWidget = (function () {
         _searchWidget = document.querySelector(".search-widget");
         _searchInput = _searchWidget.querySelector("input");
         _searchButton = _searchWidget.querySelector("button");
+        _errorMessage = _searchWidget.querySelector(".error");
+
         _callback = onSearchClickedCallback;
 
         _searchWidget.onkeydown = onKeyDown;
         _searchButton.onclick = onSearchSubmit;
 
         document.onkeydown = captureInput;
+
+        _errorMessage.addEventListener("animationend", function () {
+            // remove animation class so that it doesn't play multiple times
+            _errorMessage.classList.remove("fade-out-anime");
+            _errorMessage.style.display = "none";
+        });
     }
 
     function clear() {
@@ -60,9 +69,16 @@ var SearchWidget = (function () {
         }
     }
 
+    function showError(message) {
+        _errorMessage.innerText = message;
+        _errorMessage.style.display = "block";
+        _errorMessage.classList.remove("fade-out-anime");
+        _errorMessage.classList.add("fade-out-anime");
+    }
 
     return {
         initialize: initialize,
         clear: clear,
+        showError: showError,
     }
 })();

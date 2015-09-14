@@ -12,18 +12,14 @@
             Lightbox.show();
         }
         else {
-            // show error message
+            SearchWidget.showError("No result found. Please try some other hashtags");
         }
         SearchWidget.clear();
         
     }
 
     function onRequestFailed(ev) {
-        // show error message
-    }
-
-    function searchResultAdapter() {
-
+        SearchWidget.showError("Search failed. Please try some other hashtags.")
     }
 
     document.onreadystatechange = function () {
