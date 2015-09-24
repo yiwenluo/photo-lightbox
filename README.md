@@ -1,5 +1,7 @@
 # Photo Lightbox
 
+Link: http://yiwenluo.github.io/photo-lightbox
+
 This is a project that allows a user to search for the images using any hashtags. It displays the images in the search result in a Lightbox view. It currently only display the result from a single service call, so per Instagram's API documentation, it only returns 20 results at most. 
 
 The search results are retrieved by calling Instagram public endpoints. Specifically, the API that is used in this application is the Tag Endpoints: https://instagram.com/developer/endpoints/tags/ 
